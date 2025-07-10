@@ -90,7 +90,7 @@ const projects: Project[] = [
     name: 'Hub Zero Website',
     desc: 'Official website of Hub Zero, built with Next.js and Tailwind CSS, deployed using NGINX on Ubuntu and accelerated with Cloudflare.',
     longDesc: 'Official Hub Zero site built with Next.js & Tailwind, featuring scroll‑snap sections, GSAP animations, and dynamic content, deployed on Ubuntu via NGINX and accelerated with Cloudflare CDN.',
-    repo: 'https://github.com/Rifaque/HubZero-MERN',
+    repo: 'https://github.com/Rifaque/HubZero-Next',
     live: 'https://hubzero.in',
     tech: ['Next.js', 'Tailwind CSS', 'NGINX', 'Ubuntu', 'Cloudflare'],
     categories: ['Web'],
@@ -166,10 +166,10 @@ export default function RifaqueClient() {
       {/* Navbar */}
       <nav className="fixed top-0 w-full backdrop-blur-md bg-black/50 border-b border-white/10 px-6 py-3 flex justify-between items-center z-50">
         <h1 onClick={() => scrollTo('hero')} className="text-[#3ABEFF] font-bold cursor-pointer">
-          &lt;Rifaque /&gt;
+          &lt;<span className="text-gray-100">Rifaque</span> /&gt;
         </h1>
         <div className="hidden md:flex gap-6 text-white/70 text-sm">
-          {['about', 'skills', 'projects'].map((sec) => (
+          {['about', 'skills', 'projects','contact'].map((sec) => (
             <button
               key={sec}
               onClick={() => scrollTo(sec)}
@@ -251,17 +251,15 @@ export default function RifaqueClient() {
           <div className="max-w-3xl">
             <h2 className="text-3xl md:text-4xl font-bold text-[#3ABEFF] mb-6">About Me</h2>
             <p className="text-white/70 leading-relaxed mb-4 text-sm md:text-base">
-              I&apos;m a Computer Science student at Anjuman Institute of Technology and Management, set to graduate in 2026. As a passionate full stack developer, I build scalable and high-performance web applications, with hands-on experience in both frontend and backend technologies.
+              Full stack developer with hands-on experience building scalable web platforms using the MERN stack. Passionate about writing clean, efficient code and implementing responsive UIs with React, Tailwind CSS, and GSAP. Currently maintaining the Hub Zero website, built with Next.js and NGINX, deployed on a self-hosted Ubuntu server secured via Cloudflare.
             </p>
             <p className="text-white/70 leading-relaxed mb-4 text-sm md:text-base">
-              As the co-founder and lead developer at Hub Zero, I&apos;ve led several impactful projects including a full-featured eCommerce store, educational platforms, and predictive healthcare tools powered by AI. I&apos;m currently developing and maintaining Hub Zero&apos;s dynamic website, integrating advanced features like user authentication, admin dashboards, and real-time content management.
-            </p>
-            <p className="text-white/70 leading-relaxed mb-4 text-sm md:text-base">
-              I&apos;m proficient in <span className="text-[#3ABEFF] font-medium">React, Node.js, Express, and MongoDB</span>, and experienced in deployment tools like NGINX and Cloudflare. My tech stack also includes Python, JavaScript, Tailwind CSS, and modern frameworks like Next.js and Flask. I&apos;m familiar with authentication systems (JWT, OTP), cloud deployment, and server configuration on Ubuntu.
+              Proficient in backend technologies like Node.js, Express, and MongoDB, with experience in API design, JWT authentication, and image storage via Imgix. Skilled in integrating frontend and backend workflows for a seamless developer experience.
             </p>
             <p className="text-white/70 leading-relaxed mb-6 text-sm md:text-base">
-              With a strong foundation in UI/UX design and software architecture, I strive to build applications that are not just functional, but also intuitive and responsive. I thrive in fast-paced environments and love collaborating with like-minded builders, and I&apos;m actively seeking roles in full stack engineering, software development, or cloud infrastructure.
+              Well-versed in UI/UX principles and software architecture patterns like MVC, I strive to create intuitive and reliable user experiences. Also familiar with Python, Flask, and machine learning workflows, including building real-time prediction tools.
             </p>
+
 
             {/* Socials */}
             <div className="flex flex-wrap gap-4 text-sm">
@@ -533,11 +531,21 @@ export default function RifaqueClient() {
               <div className="space-y-3 text-sm text-white/80">
                 <div className="flex items-center gap-3">
                   <AiOutlineMail className="text-[#3ABEFF]" />
-                  <span>rifaque123@gmail.com</span>
+                  <a
+                    href="mailto:rifaque123@gmail.com"
+                    className="hover:underline hover:text-white transition"
+                  >
+                    rifaque123@gmail.com
+                  </a>
                 </div>
                 <div className="flex items-center gap-3">
                   <AiOutlinePhone className="text-[#3ABEFF]" />
-                  <span>+91 6364282251</span>
+                  <a
+                    href="tel:+916364282251"
+                    className="hover:underline hover:text-white transition"
+                  >
+                    +91 6364282251
+                  </a>
                 </div>
                 <div className="flex items-center gap-3">
                   <GoLocation className="text-[#3ABEFF]" />
@@ -545,6 +553,7 @@ export default function RifaqueClient() {
                 </div>
               </div>
             </div>
+
 
             <div className="bg-white/5 p-6 rounded-lg">
               <h3 className="text-lg font-semibold text-[#3ABEFF] mb-4">Find Me Online</h3>
