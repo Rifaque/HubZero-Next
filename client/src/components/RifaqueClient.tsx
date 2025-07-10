@@ -73,6 +73,21 @@ type SocialLink = {
   icon: JSX.Element;
 };
 
+const container = {
+  hidden: {},
+  visible: {
+    transition: {
+      staggerChildren: 0.1,
+    },
+  },
+};
+
+const item = {
+  hidden: { opacity: 0, y: 20 },
+  visible: { opacity: 1, y: 0 },
+};
+
+
 const projects: Project[] = [
   {
     name: 'eCommerce Store',
@@ -387,7 +402,7 @@ export default function RifaqueClient() {
       <section id="projects" className="px-6 py-20">
         <h2 className="text-2xl font-bold text-[#3ABEFF] text-center mb-6">Featured Projects</h2>
 
-        <div className="flex justify-center gap-4 mb-8">
+        <div className="flex justify-center gap-4 mb-8 overflow-x-auto px-2 snap-x">
           {CATEGORIES.map((cat) => (
             <button
               key={cat}
@@ -401,16 +416,20 @@ export default function RifaqueClient() {
           ))}
         </div>
 
-        <div className="max-w-5xl mx-auto grid md:grid-cols-2 gap-8">
+        <motion.div
+          variants={container}
+          initial="hidden"
+          animate="visible"
+          className="max-w-5xl mx-auto grid md:grid-cols-2 gap-8"
+        >
           {filteredProjects.map((p) => (
             <motion.div
               key={p.name}
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.3 }}
-              className="bg-white/5 rounded-lg overflow-hidden shadow-lg group"
+              variants={item}
+              transition={{ duration: 0.4 }}
+              className="bg-white/5 rounded-lg overflow-hidden shadow-lg group hover:shadow-[0_0_20px_#3ABEFF33] transition-transform hover:-translate-y-1"
             >
-              <div className="relative h-48">
+              <div className="relative h-44">
                 <Image src={p.screenshot!} alt={p.name} fill className="object-cover" />
               </div>
               <div className="p-5">
@@ -421,7 +440,7 @@ export default function RifaqueClient() {
                     <span className="hidden sm:inline"> – {p.end}</span>
                   </span>
                 </div>
-                <p className="text-gray-300 mt-2 text-sm">{p.desc}</p>
+                <p className="text-gray-300 mt-2 text-sm line-clamp-3">{p.desc}</p>
                 <div className="flex flex-wrap gap-2 mt-4">
                   {p.tech.map((t) => (
                     <span key={t} className="bg-white/10 px-3 py-1 rounded-full text-xs">{t}</span>
@@ -431,18 +450,14 @@ export default function RifaqueClient() {
                   {p.live && (
                     <a
                       href={p.live}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="px-4 py-2 rounded bg-[#3ABEFF] text-black text-sm"
+                      className="px-4 py-2 rounded bg-[#3ABEFF] text-black text-sm hover:brightness-90 transition"
                     >
                       Demo
                     </a>
                   )}
                   <a
                     href={p.repo}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="px-4 py-2 rounded border border-white/40 text-sm"
+                    className="px-4 py-2 rounded border border-white/40 text-sm hover:bg-white/10 transition"
                   >
                     Code
                   </a>
@@ -450,15 +465,13 @@ export default function RifaqueClient() {
               </div>
             </motion.div>
           ))}
-        </div>
-
+        </motion.div>
+        
         {/* See More on GitHub Button */}
         <div className="mt-12 flex justify-center">
           <a
             href="https://github.com/Rifaque"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex items-center gap-2 border border-white/10 text-white px-6 py-2 rounded hover:bg-white/10 transition"
+            className="flex items-center gap-2 border border-white/10 text-white px-6 py-2 rounded hover:bg-white/10 focus:ring-2 focus:ring-[#3ABEFF] transition"
           >
             <FiGithub className="w-5 h-5" />
             <span className="text-sm font-medium">See More on GitHub</span>

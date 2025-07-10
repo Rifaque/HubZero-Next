@@ -10,6 +10,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@tailwindcss/line-clamp": "^0.4.4",
     "express": "^5.1.0",
     "framer-motion": "^12.23.0",
     "gsap": "^3.13.0",
