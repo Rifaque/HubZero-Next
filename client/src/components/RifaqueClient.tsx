@@ -260,7 +260,7 @@ export default function RifaqueClient() {
               I&apos;m proficient in <span className="text-[#3ABEFF] font-medium">React, Node.js, Express, and MongoDB</span>, and experienced in deployment tools like NGINX and Cloudflare. My tech stack also includes Python, JavaScript, Tailwind CSS, and modern frameworks like Next.js and Flask. I&apos;m familiar with authentication systems (JWT, OTP), cloud deployment, and server configuration on Ubuntu.
             </p>
             <p className="text-white/70 leading-relaxed mb-6 text-sm md:text-base">
-              With a strong foundation in UI/UX design and software architecture, I strive to build applications that are not just functional, but also intuitive and responsive. I thrive in fast-paced environments and love collaborating with like-minded builders, and I'm actively seeking roles in full stack engineering, software development, or cloud infrastructure.
+              With a strong foundation in UI/UX design and software architecture, I strive to build applications that are not just functional, but also intuitive and responsive. I thrive in fast-paced environments and love collaborating with like-minded builders, and I&apos;m actively seeking roles in full stack engineering, software development, or cloud infrastructure.
             </p>
 
             {/* Socials */}
