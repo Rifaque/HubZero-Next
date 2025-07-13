@@ -69,9 +69,8 @@ export default function TeamPage() {
         {/* First row - 3 cards */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
           {team.slice(0, 3).map((member, i) => (
-            <Link href={`/${member.username}`}>
+            <Link href={`/${member.username}`} key={member.username}>
             <motion.div
-              key={member.name}
               custom={i}
               initial="hidden"
               animate="visible"
@@ -97,9 +96,8 @@ export default function TeamPage() {
         {/* Second row - 2 centered cards */}
         <div className="mt-16 flex flex-col sm:flex-row justify-center gap-8">
           {team.slice(3).map((member, i) => (
-            <Link href={`/${member.username}`}>
+            <Link href={`/${member.username}`} key={member.username}>
             <motion.div
-              key={member.name}
               custom={i + 3}
               initial="hidden"
               animate="visible"
