@@ -1,0 +1,40 @@
+{
+  "username": "iyad",
+  "name": "Iyad",
+  "fullname": "Mohammed Iyad",
+  "title": "UI/UX Designer",
+  "location": "Bhatkal, Karnataka, India - 581320",
+  "email": "iyad@example.com",
+  "phone": "+91 9000000001",
+  "resume": "/resumes/iyad-resume.pdf",
+  "typewriter": ["UI/UX Designer", "Visual Thinker", "Design Strategist"],
+  "socials": {
+    "github": "https://github.com/iyad",
+    "linkedin": "https://linkedin.com/in/iyad",
+    "email": "mailto:iyad@example.com"
+  },
+  "about": [
+    "Creative UI/UX Designer with a passion for clean design and smooth user experiences.",
+    "Skilled in wireframing, prototyping, and bringing visual consistency across platforms.",
+    "Works closely with developers to implement pixel-perfect interfaces across web and mobile."
+  ],
+  "skills": [
+    { "category": "Design", "items": ["Figma", "Adobe XD", "Wireframing"] },
+    { "category": "UI/UX", "items": ["User Research", "Prototyping", "Responsive Design"] },
+    { "category": "Tools", "items": ["Notion", "Framer", "Trello"] }
+  ],
+  "projects": [
+    {
+      "name": "HubZero UI Revamp",
+      "desc": "Redesigned HubZero’s web UI for a modern and responsive experience.",
+      "longDesc": "Led the redesign of HubZero’s interface with a focus on clean layouts, responsiveness, and brand alignment. Delivered reusable UI components and improved accessibility.",
+      "repo": "https://github.com/iyad/hubzero-ui",
+      "tech": ["Figma", "Framer", "Tailwind CSS"],
+      "categories": ["Web"],
+      "start": "Jan 2025",
+      "end": "Present",
+      "screenshot": "/screenshots/iyad-hubzero-ui.png",
+      "_comment": "Project screenshot is optional and can be omitted if not available. Size should be 1280px x 450px."
+    }
+  ]
+}

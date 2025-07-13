@@ -13,7 +13,6 @@ export default function AboutSection() {
   const familyGuideRef = useRef<HTMLDivElement | null>(null);
   const gridItemsRef = useRef<(HTMLDivElement | null)[]>([]);
 
-  // Helpers to assign refs safely
   const setStatsRef = (index: number) => (el: HTMLDivElement | null) => {
     statsRef.current[index] = el;
   };
@@ -31,12 +30,11 @@ export default function AboutSection() {
       {
         opacity: 1,
         y: 0,
-        duration: 1.5,
+        duration: 1.3,
         ease: 'power2.out',
         scrollTrigger: {
           trigger: sectionRef.current,
           start: 'top 85%',
-          toggleActions: 'play none none reverse',
         },
       }
     );
@@ -48,12 +46,11 @@ export default function AboutSection() {
         opacity: 1,
         y: 0,
         duration: 1,
+        stagger: 0.15,
         ease: 'power2.out',
-        stagger: 0.2,
         scrollTrigger: {
           trigger: sectionRef.current,
           start: 'top 80%',
-          toggleActions: 'play none none reverse',
         },
       }
     );
@@ -64,12 +61,11 @@ export default function AboutSection() {
       {
         opacity: 1,
         y: 0,
-        duration: 1.5,
+        duration: 1.3,
         ease: 'power2.out',
         scrollTrigger: {
           trigger: familyGuideRef.current,
           start: 'top 85%',
-          toggleActions: 'play none none reverse',
         },
       }
     );
@@ -81,12 +77,11 @@ export default function AboutSection() {
         opacity: 1,
         y: 0,
         duration: 1,
-        ease: 'power2.out',
         stagger: 0.2,
+        ease: 'power2.out',
         scrollTrigger: {
           trigger: familyGuideRef.current,
           start: 'top 80%',
-          toggleActions: 'play none none reverse',
         },
       }
     );
@@ -102,9 +97,16 @@ export default function AboutSection() {
   ];
 
   return (
-    <section ref={sectionRef} className="py-20 px-6 text-center bg-black text-white">
-      <h2 className="text-5xl font-bold mb-6">About Hubzero</h2>
-      <p className="text-lg max-w-3xl mx-auto text-gray-300 mb-12">
+    <section
+      ref={sectionRef}
+      className="py-16 sm:py-20 px-4 sm:px-6 text-center bg-black text-white"
+      aria-labelledby="about-heading"
+    >
+      <h2 id="about-heading" className="text-4xl sm:text-5xl font-bold mb-6">
+        About Hubzero
+      </h2>
+
+      <p className="text-base sm:text-lg max-w-3xl mx-auto text-gray-300 mb-12">
         At Hubzero, we are on a mission to deliver top-tier digital solutions with innovation and precision.
         Founded by designers, developers, and creative thinkers, we specialize in graphic design, software development,
         branding, UI/UX, web design, and more.
@@ -116,42 +118,52 @@ export default function AboutSection() {
           <div
             key={index}
             ref={setStatsRef(index)}
-            className={`p-6 ${item.gradient ? 'bg-gradient-to-br from-[#665DCD] via-[#5FA4E6] to-[#D2AB67] rounded-lg' : ''}`}
+            className={`p-4 sm:p-6 ${
+              item.gradient
+                ? 'bg-gradient-to-br from-[#665DCD] via-[#5FA4E6] to-[#D2AB67] rounded-lg'
+                : ''
+            }`}
           >
-            <h3 className="text-2xl font-bold">{item.number}</h3>
-            <p className={`text-gray-400 ${item.gradient ? 'text-gray-900 font-semibold' : ''}`}>{item.label}</p>
+            <h3 className="text-xl sm:text-2xl font-bold">{item.number}</h3>
+            <p
+              className={`text-sm sm:text-base ${
+                item.gradient ? 'text-black font-semibold' : 'text-gray-400'
+              }`}
+            >
+              {item.label}
+            </p>
           </div>
         ))}
       </div>
 
-      {/* Hubzero Family Guide */}
-      <div ref={familyGuideRef} className="mt-32 text-center">
-        <h2 className="text-4xl font-bold mb-4">Hubzero Family Guide</h2>
-        <p className="text-lg max-w-3xl mx-auto text-gray-300">
+      {/* Family Guide */}
+      <div ref={familyGuideRef} className="mt-24 sm:mt-32">
+        <h2 className="text-3xl sm:text-4xl font-bold mb-4">Hubzero Family Guide</h2>
+        <p className="text-base sm:text-lg max-w-3xl mx-auto text-gray-300">
           We are a global digital solutions provider, empowering startups and businesses through design, development, and strategy.
         </p>
 
-        <div className="mt-12 grid grid-cols-1 md:grid-cols-2 gap-12 max-w-5xl mx-auto px-6">
-          {/* Box 1 */}
-          <div ref={setGridItemRef(0)} className="flex flex-col justify-center p-6 bg-black/50 rounded-lg text-left">
-            <h3 className="text-2xl font-bold">Graphics In Our Life</h3>
-            <p className="text-gray-400 mt-2">
+        <div className="mt-12 grid grid-cols-1 md:grid-cols-2 gap-10 sm:gap-12 max-w-5xl mx-auto">
+          {/* Grid Item 1 */}
+          <div ref={setGridItemRef(0)} className="flex flex-col justify-center p-5 bg-black/50 rounded-lg text-left">
+            <h3 className="text-xl sm:text-2xl font-bold">Graphics In Our Life</h3>
+            <p className="text-gray-400 mt-2 text-sm sm:text-base">
               <strong className="text-white">The Power Of Better Graphics</strong>
               <br />
               Strong visuals enhance branding, user experience, and communication.
               From UI/UX to marketing, better graphics create impact, boost engagement, and leave a lasting impression.
             </p>
-            <a href="#learn" className="text-blue-400 mt-3 inline-block hover:underline">
+            <a href="#learn" className="text-blue-400 mt-3 text-sm sm:text-base hover:underline">
               Learn more →
             </a>
           </div>
 
-          {/* Box 2 */}
-          <div ref={setGridItemRef(1)} className="flex justify-center p-6">
-            <div className="w-full max-w-md relative aspect-[4/3] rounded-lg shadow-lg overflow-hidden">
+          {/* Grid Item 2 */}
+          <div ref={setGridItemRef(1)} className="flex justify-center p-4">
+            <div className="w-full max-w-md aspect-[4/3] relative rounded-lg shadow-lg overflow-hidden">
               <Image
                 src="/images/graphics-design.png"
-                alt="Graphics Design"
+                alt="Illustration showing impact of design in life"
                 fill
                 className="object-cover"
                 sizes="(max-width: 768px) 90vw, 400px"
@@ -159,13 +171,12 @@ export default function AboutSection() {
             </div>
           </div>
 
-
-          {/* Box 3 */}
-          <div ref={setGridItemRef(2)} className="flex justify-center p-6">
-            <div className="w-full max-w-md relative aspect-[4/3] rounded-lg shadow-lg overflow-hidden">
+          {/* Grid Item 3 */}
+          <div ref={setGridItemRef(2)} className="flex justify-center p-4">
+            <div className="w-full max-w-md aspect-[4/3] relative rounded-lg shadow-lg overflow-hidden">
               <Image
                 src="/images/web-design.png"
-                alt="Web Design"
+                alt="Modern responsive web design"
                 fill
                 className="object-cover"
                 sizes="(max-width: 768px) 90vw, 400px"
@@ -173,17 +184,16 @@ export default function AboutSection() {
             </div>
           </div>
 
-
-          {/* Box 4 */}
-          <div ref={setGridItemRef(3)} className="flex flex-col justify-center p-6 bg-black/50 rounded-lg text-left">
-            <h3 className="text-2xl font-bold">Is Web Design Important?</h3>
-            <p className="text-gray-400 mt-2">
+          {/* Grid Item 4 */}
+          <div ref={setGridItemRef(3)} className="flex flex-col justify-center p-5 bg-black/50 rounded-lg text-left">
+            <h3 className="text-xl sm:text-2xl font-bold">Is Web Design Important?</h3>
+            <p className="text-gray-400 mt-2 text-sm sm:text-base">
               <strong className="text-white">The Power of Great Web Design</strong>
               <br />
               A well-designed website enhances user experience, credibility, and engagement.
               Clean layouts, intuitive navigation, and stunning visuals make a lasting impression, ensuring users stay and interact.
             </p>
-            <a href="#learn" className="text-blue-400 mt-3 inline-block hover:underline">
+            <a href="#learn" className="text-blue-400 mt-3 text-sm sm:text-base hover:underline">
               Learn more →
             </a>
           </div>
