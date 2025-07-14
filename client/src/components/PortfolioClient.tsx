@@ -22,6 +22,8 @@ import {
   FaWrench,
   FaReact,
   FaNodeJs,
+  FaTools,
+  FaLink,
 } from 'react-icons/fa';
 import {
   SiFlask,
@@ -33,11 +35,25 @@ import {
   SiSqlite,
   SiExpress,
   SiNextdotjs,
+  SiFigma,
+  SiAdobexd,
+  SiNotion,
+  SiFramer,
+  SiTrello,
+  SiPostgresql,
+  SiDocker,
+  SiRedis,
+  SiJest,
+  SiPostman,
+  SiArduino,
+  SiRaspberrypi,
+  SiSemrush,
+  SiGoogleanalytics,
 } from 'react-icons/si';
 import { VscVscode } from 'react-icons/vsc';
 import { PiFloppyDiskFill } from 'react-icons/pi';
 import { MdDeveloperMode } from 'react-icons/md';
-import { FiFigma, FiGithub } from 'react-icons/fi';
+import { FiGithub } from 'react-icons/fi';
 import {
   AiOutlineMail,
   AiOutlinePhone,
@@ -45,7 +61,7 @@ import {
   AiFillLinkedin,
 } from "react-icons/ai";
 import { GoLocation } from "react-icons/go";
-import { HiOutlineDocumentText } from 'react-icons/hi';
+
 import Image from 'next/image';
 import type { PortfolioData } from '@/types/portfolio';
 import { motion } from 'framer-motion';
@@ -60,6 +76,26 @@ type SocialLink = {
   icon: JSX.Element;
 };
 
+const categoryIconMapping: Record<string, JSX.Element> = {
+  "Languages": <MdDeveloperMode />,
+  "Web Development": <FaGlobe />,
+  "UI/UX & Design": <FaDesktop />,
+  "UI/UX": <FaDesktop />,
+  "Design": <FaFileAlt />,
+  "Interface": <FaReact />,
+  "Tools": <FaTools />,
+  "Backend": <FaNodeJs />,
+  "Dev Tools": <FaWrench />,
+  "Databases": <PiFloppyDiskFill />,
+  "Environments": <VscVscode />,
+  "Electronics": <PiFloppyDiskFill />,
+  "Communication Protocols": <FaGlobe />,
+  "Communication": <FaGlobe />,
+  "SEO": <SiGoogleanalytics />,
+  "Branding": <FaFileAlt />,
+};
+
+
 const skillIconMapping: Record<string, JSX.Element> = {
   // 🖥️ Languages
   "Python": <FaPython />,
@@ -69,10 +105,66 @@ const skillIconMapping: Record<string, JSX.Element> = {
   "C++": <MdDeveloperMode />,
   "Assembly": <MdDeveloperMode />,
 
-  // 🎨 UI / Interface / Frameworks
+  // 🎨 UI/UX & Design
+  "Design": <FaFileAlt />,
+  "Figma": <SiFigma />,
+  "Adobe XD": <SiAdobexd />,
+  "Wireframing": <FaFileAlt />,
+  "UI/UX": <FaDesktop />,
+  "User Research": <FaFileAlt />,
+  "Prototyping": <FaFileAlt />,
+  "Responsive Design": <FaGlobe />,
+
+  // 🛠️ Tools
+  "Tools": <FaWrench />,
+  "Notion": <SiNotion />,
+  "Framer": <SiFramer />,
+  "Trello": <SiTrello />,
+
+  // 🔙 Backend
+  "Node.js": <FaNodeJs />,
+  "Express": <SiExpress />,
+  "MongoDB": <SiMongodb />,
+  "PostgreSQL": <SiPostgresql />,
+
+  // 🧪 Dev Tools
+  "Docker": <SiDocker />,
+  "Redis": <SiRedis />,
+  "Jest": <SiJest />,
+  "Postman": <SiPostman />,
+
+  // ⚡ Electronics
+  "Electronics": <PiFloppyDiskFill />,
+  "Arduino": <SiArduino />,
+  "Raspberry Pi": <SiRaspberrypi />,
+  "Circuit Design": <FaWrench />,
+
+  // 💬 Communication Protocols
+  "I2C": <FaGlobe />,
+  "UART": <FaGlobe />,
+  "HTTP APIs": <FaGlobe />,
+
+  // 📈 SEO
+  "SEO": <FaGlobe />,
+  "On-Page SEO": <FaFileAlt />,
+  "Technical SEO": <FaFileAlt />,
+  "Keyword Research": <FaFileAlt />,
+
+  // 🔤 Branding
+  "Branding": <FaFileAlt />,
+  "Logo Strategy": <FaFileAlt />,
+  "Messaging": <FaFileAlt />,
+  "Brand Guidelines": <FaFileAlt />,
+
+  // 📊 SEO Tools
+  "Ahrefs": <FaLink />,
+  "Google Analytics": <SiGoogleanalytics />,
+  "SEMrush": <SiSemrush />,
+
+  // 🌐 Web Dev
   "React": <FaReact />,
   "Next.js": <SiNextdotjs />,
-  "Tailwind CSS": <SiStreamlit />, // placeholder; no official Tailwind icon in react-icons
+  "Tailwind CSS": <SiStreamlit />, // Placeholder icon
   "CSS": <FaCss3Alt />,
   "HTML": <FaHtml5 />,
   "Tkinter": <FaDesktop />,
@@ -80,35 +172,18 @@ const skillIconMapping: Record<string, JSX.Element> = {
   "Streamlit": <SiStreamlit />,
 
   // 🗄️ Databases
-  "MongoDB": <SiMongodb />,
   "SQL": <SiMysql />,
   "SQLite": <SiSqlite />,
   "MySQL": <SiMysql />,
 
-  // 🔧 Tools & Infra
+  // 💻 Environments
   "Cloudflare": <SiCloudflare />,
   "NGINX": <SiNginx />,
-  "Postman": <HiOutlineDocumentText />,
-  "Figma": <FiFigma />,
-  "Git": <FaGitAlt />,
   "VS Code": <VscVscode />,
-
-  // 🌐 Web Dev Tools
-  "Express.js": <SiExpress />,
-  "Node.js": <FaNodeJs />,
+  "Git": <FaGitAlt />,
   "Web Development": <FaGlobe />,
-
-  // 🧰 Misc
-  "Tools": <FaWrench />,
-  "Electronics": <PiFloppyDiskFill />,
-  "IoT": <FaGlobe />,
-  "I2C": <FaGlobe />,
-  "UART": <FaGlobe />,
-  "HTTP APIs": <FaGlobe />,
-  "Circuit Design": <FaGlobe />,
-  "Arduino": <FaWrench />,
-  "Raspberry Pi": <FaWrench />,
 };
+
 
 
 const CATEGORIES = ['All', 'Web', 'Desktop'];
@@ -281,28 +356,37 @@ return (
       {/* Skills */}
       <section id="skills" className="bg-zinc-900 px-6 py-20">
         <h2 className="text-2xl font-bold text-[#3ABEFF] text-center mb-10">Skills & Tools</h2>
-        <div className="max-w-5xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 mb-8">
-            {data.skills.map((group, index) => (
-            <div key={index} className="bg-white/5 p-6 rounded-lg">
+        <div className="max-w-5xl mx-auto flex flex-col sm:flex-row sm:flex-wrap gap-6">
+          {data.skills.map((group, index) => (
+            <div key={index} className="flex-1 min-w-[280px] bg-white/5 p-6 rounded-lg">
                 <h3 className="flex items-center gap-2 font-semibold mb-4 text-[#3ABEFF]">
-                {group.category}
+                  {categoryIconMapping[group.category] && (
+                    <span className="text-lg">{categoryIconMapping[group.category]}</span>
+                  )}
+                  {group.category}
                 </h3>
                 <div className="flex flex-wrap gap-2">
                 {group.items.map((item, idx) => {
                     const icon = skillIconMapping[item];
                     return (
-                    <span key={idx} className="bg-white/10 px-3 py-1 rounded-full flex items-center gap-1 text-sm">
-                        {icon && <span className="text-lg">{icon}</span>}
-                        {item}
-                    </span>
+                    <motion.span
+                      key={idx}
+                      className="bg-white/10 px-3 py-1 rounded-full flex items-center gap-1 text-sm"
+                      initial={{ opacity: 0, y: 10 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      transition={{ duration: 0.3, delay: idx * 0.03 }}
+                      whileHover={{ scale: 1.05 }}
+                    >
+                      {icon && <span className="text-lg">{icon}</span>}
+                      {item}
+                    </motion.span>
                     );
                 })}
                 </div>
             </div>
             ))}
         </div>
-        {/* Similarly, you can render additional rows for Tools or Web Development by following your original layout */}
-        </section>
+      </section>
 
 
       {/* Projects */}
@@ -408,11 +492,11 @@ return (
             <span className="text-sm font-medium">See More on GitHub</span>
             </a>
         </div>
-        </section>
+      </section>
 
        
-       {/* Contact */}
-        <section id="contact" className="px-6 py-20">
+      {/* Contact */}
+      <section id="contact" className="px-6 py-20">
         <h2 className="text-2xl font-bold text-[#3ABEFF] text-center mb-10">
             Get in Touch
         </h2>
@@ -524,10 +608,7 @@ return (
             </div>
             </div>
         </div>
-        </section>
-
-
-
+      </section>
 
       {/* Scroll to Top & Footer */}
       {showTopBtn && (

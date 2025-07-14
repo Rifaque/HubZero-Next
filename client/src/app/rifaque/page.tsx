@@ -1,17 +1,17 @@
-// File: src/app/rifaque/page.tsx
 import type { Metadata, Viewport } from 'next';
 import Head from 'next/head';
-import RifaqueClient from '@/components/RifaqueClient';
+import data from '@/data/rifaque.json';
+import PortfolioClient from '@/components/PortfolioClient';
 
 const buildTime = new Date().toISOString();
 
 export const metadata: Metadata = {
-  title: 'Rifaque Ahmed | Portfolio',
-  description: 'Portfolio of Rifaque Ahmed – Full Stack Developer.',
-  keywords: ['Rifaque Ahmed', 'portfolio', 'Full Stack', 'React', 'Next.js', 'Node.js'],
-  authors: [{ name: 'Rifaque Ahmed' }],
+  title: `${data.fullname} | Portfolio`,
+  description: `Portfolio of ${data.fullname} – ${data.title}.`,
+  keywords: [data.fullname, 'portfolio', ...data.skills.flatMap(skill => skill.items)],
+  authors: [{ name: data.fullname }],
   icons: {
-    icon: '/RSX-favicon.ico?v=2',
+    icon: '/RSX-favicon.ico?v=2', // ← Only used by rifaque
     apple: '/apple-touch-icon.png',
     other: {
       rel: 'manifest',
@@ -19,40 +19,40 @@ export const metadata: Metadata = {
     },
   },
   openGraph: {
-    title: 'Rifaque Ahmed | Portfolio',
-    description: "Explore the official portfolio of Rifaque Ahmed, a Full Stack Developer skilled in React, Node.js, Python, and modern web technologies. Browse projects, skills, and contact details.",
-    url: 'https://hubzero.in/rifaque',
-    images: [
-    {
-      url: 'https://hubzero.in/rifaque-thumbnail.png',
-      width: 1200,
-      height: 630,
-      alt: 'Rifaque Portfolio Banner',
-    },
-    {
-      url: 'https://hubzero.in/rifaque-thumbnail-square.png',
-      width: 630,
-      height: 630,
-      alt: 'Rifaque Portfolio Thumbnail Square',
-    },
-  ],
+    title: `${data.fullname} | Portfolio`,
+    description: `Explore the official portfolio of ${data.fullname}, a ${data.title} skilled in modern web technologies. Browse projects, skills, and contact details.`,
+    url: `https://hubzero.in/${data.username}`,
+    images: [                        // ← Only rifaque has custom OG images
+      {
+        url: `https://hubzero.in/${data.username}-thumbnail.png`,
+        width: 1200,
+        height: 630,
+        alt: `${data.name} Portfolio Banner`,
+      },
+      {
+        url: `https://hubzero.in/${data.username}-thumbnail-square.png`,
+        width: 630,
+        height: 630,
+        alt: `${data.name} Portfolio Thumbnail Square`,
+      },
+    ],
     type: 'website',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Rifaque Ahmed | Portfolio',
-    description: "Hi, I'm Rifaque—a passionate Full Stack Developer.",
-    images: [
-    'https://hubzero.in/rifaque-thumbnail.png',
-    'https://hubzero.in/rifaque-square-thumbnail.png',
+    title: `${data.fullname} | Portfolio`,
+    description: `Hi, I'm ${data.name} — a passionate ${data.title}.`,
+    images: [                        // ← Only rifaque has these
+      `https://hubzero.in/${data.username}-thumbnail.png`,
+      `https://hubzero.in/${data.username}-thumbnail-square.png`,
     ],
   },
   other: {
     'article:published_time': '2025-07-08T00:00:00Z',
     'article:modified_time': buildTime,
-    'article:author': 'https://hubzero.in/rifaque',
+    'article:author': `https://hubzero.in/${data.username}`,
     'article:section': 'Portfolio',
-    'canonical': 'https://hubzero.in/rifaque',
+    'canonical': `https://hubzero.in/${data.username}`,
   },
 };
 
@@ -70,18 +70,17 @@ export default function Page() {
             __html: JSON.stringify({
               "@context": "https://schema.org",
               "@type": "Person",
-              "name": "Rifaque Ahmed",
-              "url": "https://hubzero.in/rifaque",
-              "jobTitle": "Full Stack Developer",
-              "sameAs": [
-                "https://github.com/Rifaque",
-                "https://linkedin.com/in/rifaque-akrami"
-              ]
+              "name": data.fullname,
+              "url": `https://hubzero.in/${data.username}`,
+              "jobTitle": data.title,
+              "email": data.socials.email.replace(/^mailto:/, ''),
+              "sameAs": Object.values(data.socials).filter(link => link.startsWith('http')),
+              "image": `https://hubzero.in/${data.username}-thumbnail.png`, // ← Only if custom image exists
             }),
           }}
         />
       </Head>
-      <RifaqueClient />
+      <PortfolioClient data={data} />
     </>
   );
 }
