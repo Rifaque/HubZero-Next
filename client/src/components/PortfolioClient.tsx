@@ -65,6 +65,8 @@ import { GoLocation } from "react-icons/go";
 import Image from 'next/image';
 import type { PortfolioData } from '@/types/portfolio';
 import { motion } from 'framer-motion';
+import CommandTerminal from "@/components/CommandTerminal";
+import CmdButton from "@/components/CmdButton";
 
 type Props = {
   data: PortfolioData;
@@ -204,6 +206,8 @@ const item = {
 
 export default function PortfolioClient({ data }: Props) {
   const [showTopBtn, setShowTopBtn] = useState(false);
+  const [showCmd, setShowCmd] = useState(false);
+  const [history, setHistory] = useState<string[]>([]);
   const [menuOpen, setMenuOpen] = useState(false);
   const [filter, setFilter] = useState('All');
 
@@ -212,6 +216,17 @@ export default function PortfolioClient({ data }: Props) {
     { label: 'LinkedIn', href: data.socials.linkedin, icon: <FaLinkedin /> },
     { label: 'Email', href: data.socials.email, icon: <FaEnvelope /> },
   ];
+
+  // 🔑 Global keyboard toggle
+  useEffect(() => {
+    const handleGlobalToggle = (e: KeyboardEvent) => {
+      if ((e.key === "`" || e.key === "~") && !e.ctrlKey && !e.metaKey && !e.altKey) {
+        setShowCmd(prev => !prev);
+      }
+    };
+    window.addEventListener("keydown", handleGlobalToggle);
+    return () => window.removeEventListener("keydown", handleGlobalToggle);
+  }, []);
 
   useEffect(() => {
     document.title = `${data.name} | Portfolio`;
@@ -269,7 +284,7 @@ return (
       {/* Hero */}
       <section id="hero" className="h-screen flex flex-col justify-center items-center text-center px-6">
         <div className="absolute w-[90vw] h-[90vw] max-w-[40rem] max-h-[40rem] bg-gradient-to-br from-[#3ABEFF] via-cyan-400 to-blue-300 rounded-full blur-[200px] opacity-30 animate-pulse -z-10" />
-        <p className="text-sm text-[#3ABEFF]">~/portfolio/rifaque</p>
+        <p className="text-sm text-[#3ABEFF]">~/portfolio/{data.username}</p>
         <h1 className="mt-2 font-bold text-gray-100 text-4xl md:text-6xl">
           <span className="text-green-400">$</span> Hello, I&apos;m{' '}
           <span className="text-[#3ABEFF]">{data.name}</span>
@@ -611,7 +626,7 @@ return (
       </section>
 
       {/* Scroll to Top & Footer */}
-      {showTopBtn && (
+      {showTopBtn && !showCmd && (
         <button
           onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
           className="fixed bottom-6 right-6 bg-[#3ABEFF] text-black px-4 py-2 rounded-full shadow hover:bg-[#56D4FF] transition"
@@ -627,6 +642,15 @@ return (
           <FaInstagram className="w-5 h-5 text-white/70" />
         </div>
       </footer>
+      
+    <CmdButton onClick={() => setShowCmd(!showCmd)} />
+    <CommandTerminal
+      data={data}
+      show={showCmd}
+      onToggle={() => setShowCmd(false)}
+      history={history}
+      setHistory={setHistory}
+    />
     </main>
   );
 }
