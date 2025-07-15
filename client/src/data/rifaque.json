@@ -6,7 +6,7 @@
   "location": "Bhatkal, Karnataka, India - 581320",
   "email": "rifaque123@gmail.com",
   "phone": "+91 6364282251",
-  "resume": "/Rifaque-Ahmed-Resume.pdf",
+  "resume": "/resume/Rifaque-Ahmed-Resume.pdf",
   "typewriter": ["Full Stack Developer", "Problem Solver", "Software Engineer"],
   "socials": {
     "github": "https://github.com/Rifaque",
@@ -51,7 +51,7 @@
       "categories": ["Web"],
       "start": "Apr 2025",
       "end": "May 2025",
-      "screenshot": "/screenshots/ecommerce-thumbnail.png",
+      "screenshot": "/projectscreenshots/ecommerce-thumbnail.png",
       "_comment": "Project screenshot is optional and can be omitted if not available. Size should be 1280px x 450px."
     },
     {
@@ -64,7 +64,7 @@
       "categories": ["Web"],
       "start": "Nov 2024",
       "end": "Present",
-      "screenshot": "/screenshots/hubzero-thumbnail.png",
+      "screenshot": "/projectscreenshots/hubzero-thumbnail.png",
       "_comment": "Project screenshot is optional and can be omitted if not available. Size should be 1280px x 450px."
     },
     {
@@ -76,7 +76,7 @@
       "categories": ["Desktop"],
       "start": "Jun 2024",
       "end": "Jul 2024",
-      "screenshot": "/screenshots/hospital-thumbnail.png",
+      "screenshot": "/projectscreenshots/hospital-thumbnail.png",
       "_comment": "Project screenshot is optional and can be omitted if not available. Size should be 1280px x 450px."
     },
     {
@@ -88,7 +88,7 @@
       "categories": ["Web"],
       "start": "Oct 2024",
       "end": "Oct 2024",
-      "screenshot": "/screenshots/blood-app-thumbnail.png",
+      "screenshot": "/projectscreenshots/blood-app-thumbnail.png",
       "_comment": "Project screenshot is optional and can be omitted if not available. Size should be 1280px x 450px."
     },
     {
@@ -100,7 +100,7 @@
       "categories": ["Desktop"],
       "start": "May 2023",
       "end": "Jun 2023",
-      "screenshot": "/screenshots/college-thumbnail.png",
+      "screenshot": "/projectscreenshots/college-thumbnail.png",
       "_comment": "Project screenshot is optional and can be omitted if not available. Size should be 1280px x 450px."
     }
   ]

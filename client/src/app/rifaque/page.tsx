@@ -11,7 +11,7 @@ export const metadata: Metadata = {
   keywords: [data.fullname, 'portfolio', ...data.skills.flatMap(skill => skill.items)],
   authors: [{ name: data.fullname }],
   icons: {
-    icon: '/RSX-favicon.ico?v=2', // ← Only used by rifaque
+    icon: '/images/rifaque/RSX-favicon.ico?v=2', // ← Only used by rifaque
     apple: '/apple-touch-icon.png',
     other: {
       rel: 'manifest',
@@ -24,13 +24,13 @@ export const metadata: Metadata = {
     url: `https://hubzero.in/${data.username}`,
     images: [                        // ← Only rifaque has custom OG images
       {
-        url: `https://hubzero.in/${data.username}-thumbnail.png`,
+        url: `https://hubzero.in/images/rifaque/${data.username}-thumbnail.png`,
         width: 1200,
         height: 630,
         alt: `${data.name} Portfolio Banner`,
       },
       {
-        url: `https://hubzero.in/${data.username}-thumbnail-square.png`,
+        url: `https://hubzero.in/images/rifaque/${data.username}-thumbnail-square.png`,
         width: 630,
         height: 630,
         alt: `${data.name} Portfolio Thumbnail Square`,
@@ -43,8 +43,8 @@ export const metadata: Metadata = {
     title: `${data.fullname} | Portfolio`,
     description: `Hi, I'm ${data.name} — a passionate ${data.title}.`,
     images: [                        // ← Only rifaque has these
-      `https://hubzero.in/${data.username}-thumbnail.png`,
-      `https://hubzero.in/${data.username}-thumbnail-square.png`,
+      `https://hubzero.in/images/rifaque/${data.username}-thumbnail.png`,
+      `https://hubzero.in/images/rifaque/${data.username}-thumbnail-square.png`,
     ],
   },
   other: {
@@ -75,7 +75,7 @@ export default function Page() {
               "jobTitle": data.title,
               "email": data.socials.email.replace(/^mailto:/, ''),
               "sameAs": Object.values(data.socials).filter(link => link.startsWith('http')),
-              "image": `https://hubzero.in/${data.username}-thumbnail.png`, // ← Only if custom image exists
+              "image": `https://hubzero.in/images/rifaque/${data.username}-thumbnail.png`, // ← Only if custom image exists
             }),
           }}
         />
