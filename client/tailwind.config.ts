@@ -1,7 +1,7 @@
-// tailwind.config.ts
+/** @type {import('tailwindcss').Config} */
 export default {
-  content: ['./src/**/*.{js,ts,jsx,tsx,mdx}'], // ✅ All files using classes
-  safelist: ['text-red-500', 'bg-blue-500'],   // Optional: if you're dynamically using class names
+  darkMode: 'class', // Enables .dark class-based toggling
+  content: ['./app/**/*.{js,ts,jsx,tsx}', './components/**/*.{js,ts,jsx,tsx}'],
   theme: {
     extend: {},
   },

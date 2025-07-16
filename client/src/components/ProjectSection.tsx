@@ -54,7 +54,18 @@ export default function ProjectSection() {
   }, []);
 
   return (
-    <section ref={sectionRef} className="bg-black text-white py-20">
+    <section
+      ref={sectionRef}
+      className="relative bg-[var(--bg)] text-[var(--text)] py-20 transition-colors duration-300 overflow-hidden rounded-lg border m-3 border-[var(--border-muted)]"
+    >
+      <div className="absolute inset-0 pointer-events-none -z-10">
+        {/* Top Right Glow */}
+        <div className="absolute top-[100px] right-[-100px] w-[500px] h-[350px] rounded-full bg-[var(--home-grad-1)] blur-[180px]" />
+        
+        {/* Bottom Left Glow */}
+        <div className="absolute bottom-[100px] left-[-100px] w-[500px] h-[350px] rounded-full bg-[var(--home-grad-2)] blur-[180px]" />
+      </div>
+
       <div className="max-w-6xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
         {/* Title */}
         <h2 className="text-4xl sm:text-5xl font-bold leading-tight">
@@ -63,15 +74,16 @@ export default function ProjectSection() {
 
         {/* Project Tiles */}
         <div ref={projectsRef} className="grid grid-cols-2 gap-4 justify-center md:justify-end">
-          {[0, 1, 2, 3].map((i) => {
-            const project = projects[i];
+          {projects.map((project, i) => {
             const isOffset = i > 1;
 
             return (
               <div
                 key={i}
-                className={`w-[160px] sm:w-[180px] md:w-[210px] h-[160px] sm:h-[180px] md:h-[210px] p-4 sm:p-5 rounded-lg shadow-lg border border-[#2b3546]
-                bg-gradient-to-b from-[#0f1115] to-black flex flex-col items-center justify-center transition duration-300 hover:scale-105
+                className={`w-[160px] sm:w-[180px] md:w-[210px] h-[160px] sm:h-[180px] md:h-[210px] p-4 sm:p-5 rounded-lg shadow-lg
+                border border-[var(--border-muted)]
+                bg-gradient-to-b from-[var(--bg-dark)] to-[var(--bg)] 
+                flex flex-col items-center justify-center transition duration-300 hover:scale-105
                 ${isOffset ? 'md:translate-y-10' : ''}`}
               >
                 <div className="w-16 h-16 sm:w-20 sm:h-20 relative mb-2">
@@ -82,7 +94,7 @@ export default function ProjectSection() {
                     className="object-cover rounded"
                   />
                 </div>
-                <p className="text-xs text-gray-300 text-center leading-snug">
+                <p className="text-xs text-[var(--text-muted)] text-center leading-snug">
                   {project.title.map((line, idx) => (
                     <span key={idx} className="block">{line}</span>
                   ))}

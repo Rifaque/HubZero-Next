@@ -4,8 +4,7 @@ import React, { useState, useRef, useEffect } from "react";
 import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import Image from 'next/image';
-
+import Image from "next/image";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -64,11 +63,12 @@ const Testimonials: React.FC = () => {
   };
 
   return (
-    <div className="relative w-full px-4 sm:px-6 max-w-3xl mx-auto mt-20 mb-20 text-center">
+    <div className="relative w-full px-4 sm:px-6 max-w-3xl mx-auto mt-20 mb-20 text-center text-[var(--text)]">
       <h2 className="text-3xl sm:text-4xl font-bold mb-4">We are in a good company</h2>
-      <p className="text-gray-400 mb-8 text-base sm:text-lg">
-        Our Clients have shown great appreciation to our projects and<br className="hidden sm:block" />
-        we`&apos;re happy to share some of their feedback below
+      <p className="text-[var(--text-muted)] mb-8 text-base sm:text-lg">
+        Our Clients have shown great appreciation to our projects and
+        <br className="hidden sm:block" />
+        were happy to share some of their feedback below
       </p>
 
       {/* Testimonial Content with Buttons */}
@@ -76,24 +76,24 @@ const Testimonials: React.FC = () => {
         {/* Left Arrow */}
         <button
           onClick={prevTestimonial}
-          className="absolute left-2 sm:left-[-50px] top-1/2 transform -translate-y-1/2 bg-gray-700 p-2 rounded-full hover:bg-gray-600 transition"
+          className="absolute left-2 sm:left-[-50px] top-1/2 transform -translate-y-1/2 
+          bg-[var(--border-muted)] p-2 rounded-full hover:bg-[var(--border)] transition"
         >
-          <FaArrowLeft className="text-white text-lg sm:text-xl" />
+          <FaArrowLeft className="text-[var(--text)] text-lg sm:text-xl" />
         </button>
 
-
         <div ref={testimonialRef}>
-          <p className="text-base sm:text-lg text-gray-300 italic leading-relaxed">
+          <p className="text-base sm:text-lg text-[var(--text-muted)] italic leading-relaxed">
             &quot;{testimonials[currentTestimonial].quote}&quot;
           </p>
           <h4 className="text-base sm:text-lg font-bold mt-4">
             {testimonials[currentTestimonial].name}
           </h4>
           <div className="flex items-center justify-center gap-3 mt-1 flex-wrap">
-            <p className="text-gray-400 text-sm sm:text-base">
+            <p className="text-[var(--text-muted)] text-sm sm:text-base">
               {testimonials[currentTestimonial].company}
             </p>
-            <span className="w-[1px] h-5 bg-gray-500 hidden sm:inline-block"></span>
+            <span className="w-[1px] h-5 bg-[var(--border-muted)] hidden sm:inline-block"></span>
             <div className="relative w-5 h-5 sm:w-6 sm:h-6">
               <Image
                 src="/HubZeroLogoICO.png"
@@ -109,9 +109,10 @@ const Testimonials: React.FC = () => {
         {/* Right Arrow */}
         <button
           onClick={nextTestimonial}
-          className="absolute right-2 sm:right-[-50px] top-1/2 transform -translate-y-1/2 bg-gray-700 p-2 rounded-full hover:bg-gray-600 transition"
+          className="absolute right-2 sm:right-[-50px] top-1/2 transform -translate-y-1/2 
+          bg-[var(--border-muted)] p-2 rounded-full hover:bg-[var(--border)] transition"
         >
-          <FaArrowRight className="text-white text-lg sm:text-xl" />
+          <FaArrowRight className="text-[var(--text)] text-lg sm:text-xl" />
         </button>
       </div>
 
@@ -120,8 +121,10 @@ const Testimonials: React.FC = () => {
         {testimonials.map((_, index) => (
           <span
             key={index}
-            className={`w-3 h-3 rounded-full ${
-              index === currentTestimonial ? "bg-white" : "bg-gray-600"
+            className={`w-3 h-3 rounded-full transition ${
+              index === currentTestimonial
+                ? "bg-[var(--text)]"
+                : "bg-[var(--border-muted)]"
             }`}
           ></span>
         ))}
