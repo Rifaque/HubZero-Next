@@ -93,7 +93,7 @@ export default function Navbar() {
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: -10 }}
                 transition={{ duration: 0.3 }}
-                className="absolute left-0 mt-2 w-52 rounded-md shadow-xl overflow-hidden border border-[var(--border-muted)] backdrop-blur-md bg-[color:var(--bg-dark)/75]"
+                className="absolute left-0 mt-2 w-52 rounded-md shadow-xl overflow-hidden border border-[var(--border-muted)] backdrop-blur-md bg-[rgba(18,18,18,0.95)]"
               >
                 <a
                   href="/web-development"
@@ -156,16 +156,16 @@ export default function Navbar() {
             animate={{ height: "auto", opacity: 1 }}
             exit={{ height: 0, opacity: 0 }}
             transition={{ duration: 0.3 }}
-            className="absolute top-full left-0 w-full bg-[color:var(--bg-dark)/95] backdrop-blur-md flex flex-col items-center py-6 gap-6 md:hidden z-40"
+            className="absolute top-full left-0 w-[80vw] bg-[rgba(18,18,18,0.95)] rounded-2xl m-10 mt-0 backdrop-blur-md flex flex-col items-center py-6 gap-6 md:hidden z-40"
           >
             <a href="/about" className="text-[var(--text-muted)] hover:text-[var(--text)] transition">ABOUT US</a>
 
             <div className="flex flex-col items-center gap-1">
               <span className="text-[var(--text-muted)] text-sm mb-1">OUR SERVICES</span>
-              <a href="#web-development" className="text-[var(--text-muted)] hover:text-[var(--text)] transition">Web Development</a>
-              <a href="#ui-ux" className="text-[var(--text-muted)] hover:text-[var(--text)] transition">UI/UX Design</a>
-              <a href="#branding" className="text-[var(--text-muted)] hover:text-[var(--text)] transition">Branding</a>
-              <a href="#seo" className="text-[var(--text-muted)] hover:text-[var(--text)] transition">SEO Optimization</a>
+              <a href="/web-development" className="text-[var(--text-muted)] hover:text-[var(--text)] transition">Web Development</a>
+              <a href="/ui-ux" className="text-[var(--text-muted)] hover:text-[var(--text)] transition">UI/UX Design</a>
+              <a href="/branding" className="text-[var(--text-muted)] hover:text-[var(--text)] transition">Branding</a>
+              <a href="/seo" className="text-[var(--text-muted)] hover:text-[var(--text)] transition">SEO Optimization</a>
             </div>
 
             <a href="/contact" className="text-[var(--text-muted)] hover:text-[var(--text)] transition">WORK WITH US</a>
