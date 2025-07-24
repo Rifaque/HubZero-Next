@@ -21,7 +21,7 @@ export type PortfolioData = {
     name: string;
     desc: string;
     longDesc: string;
-    repo: string;
+    repo?: string;
     live?: string;
     tech: string[];
     categories: string[];
