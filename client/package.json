@@ -5,7 +5,6 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build && next-sitemap",
-    "postbuild": "cp public/sitemap.xml out/ && cp public/robots.txt out/",
     "start": "next start",
     "lint": "next lint"
   },
