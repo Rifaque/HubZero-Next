@@ -67,7 +67,6 @@ import {
   SiScikitlearn,
   SiPandas,
   SiPytorch,
-  SiJupyter,
   SiGooglecloud,
   SiPlotly,
 } from 'react-icons/si';
