@@ -20,7 +20,7 @@
   ],
   "skills": [
     { "category": "Electronics", "items": ["Arduino", "Raspberry Pi", "Circuit Design"] },
-    { "category": "Languages", "items": ["C", "Python", "Assembly","C++","verilog"] },
+    { "category": "Languages", "items": ["C", "Python", "Assembly","C++","Verilog"] },
     { "category": "Communication", "items": ["I2C", "UART", "HTTP APIs"] }
   ],
   "projects": [

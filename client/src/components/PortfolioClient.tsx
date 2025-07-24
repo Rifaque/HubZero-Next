@@ -193,17 +193,6 @@ const skillIconMapping: Record<string, JSX.Element> = {
   "UART": <FaGlobe />,
   "HTTP APIs": <FaGlobe />,
 
-  // 📈 SEO
-  "SEO": <FaGlobe />,
-  "On-Page SEO": <FaFileAlt />,
-  "Technical SEO": <FaFileAlt />,
-  "Keyword Research": <FaFileAlt />,
-
-  // 📊 SEO Tools
-  "Ahrefs": <FaLink />,
-  "Google Analytics": <SiGoogleanalytics />,
-  "SEMrush": <SiSemrush />,
-
   // 🌐 Web Dev
   "React": <FaReact />,
   "Next.js": <SiNextdotjs />,
@@ -233,7 +222,6 @@ const skillIconMapping: Record<string, JSX.Element> = {
   // Tools
   "Miro": <FaProjectDiagram />, // Closest visual, or <FaFileAlt /> as fallback
   "ADK Tools": <FaToolbox />,   // Assumed Android Dev Kit tools? Generic toolbox icon
-  "ADK": <FaToolbox />,
   "Google Cloud": <SiGooglecloud/>,
 
   // Project & Client Management
