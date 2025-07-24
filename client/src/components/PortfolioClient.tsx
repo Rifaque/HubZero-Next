@@ -26,7 +26,6 @@ import {
   FaReact,
   FaNodeJs,
   FaTools,
-  FaLink,
   FaComments, 
   FaSitemap,
   FaUsers, 
@@ -63,7 +62,6 @@ import {
   SiPostman,
   SiArduino,
   SiRaspberrypi,
-  SiSemrush,
   SiGoogleanalytics,
   SiTensorflow,
   SiScikitlearn,
@@ -87,15 +85,11 @@ import {
 import { GoLocation } from "react-icons/go";
 import { BiBarChartSquare, BiLayer } from "react-icons/bi";
 import { FiPackage } from "react-icons/fi";
-import { TbAssemblyFilled } from "react-icons/tb";
+import { TbAssemblyFilled, TbClick, TbVectorBezier } from "react-icons/tb";
 import { GiCircuitry } from "react-icons/gi";
-import { MdOutlineDashboard } from "react-icons/md";
+import { MdOutlineDashboard, MdOutlineTrackChanges, MdPhoneIphone } from "react-icons/md";
 import { BsBroadcast } from "react-icons/bs";
 import { LuClipboardList } from "react-icons/lu";        // User Research
-import { TbVectorBezier } from "react-icons/tb";         // Prototyping
-import { MdPhoneIphone } from "react-icons/md";          // Responsive Design
-import { MdOutlineTrackChanges } from "react-icons/md";  // Usability Testing
-import { TbClick } from "react-icons/tb";                // Interaction Design
 
 
 import Image from 'next/image';
