@@ -46,7 +46,7 @@
       "desc": "Luxury eCommerce platform featuring advanced product filtering, optimized image delivery, and a seamless shopping experience.",
       "longDesc": "A luxury eCommerce platform with advanced product filtering, user authentication, shopping carts, and optimized image delivery via Imgix for lightning‑fast load times.",
       "repo": "https://github.com/Rifaque/Bhatkal-Time-Luxe",
-      "live": "https://time-luxe.example.com",
+      "live": "https://bhatkaltimeluxe.in",
       "tech": ["MongoDB", "Express.js", "React.js", "Node.js", "Imgix"],
       "categories": ["Web"],
       "start": "Apr 2025",

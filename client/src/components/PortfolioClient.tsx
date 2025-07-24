@@ -3,9 +3,11 @@
 import type { JSX } from 'react';
 import { useEffect, useState } from 'react';
 import { Typewriter } from 'react-simple-typewriter';
+
 import {
   FaFileAlt,
   FaGithub,
+  FaExternalLinkAlt,
   FaLinkedin,
   FaEnvelope,
   FaYoutube,
@@ -24,6 +26,18 @@ import {
   FaNodeJs,
   FaTools,
   FaLink,
+  FaComments, 
+  FaSitemap,
+  FaUsers, 
+  FaClipboardList, 
+  FaThLarge, 
+  FaProjectDiagram, 
+  FaToolbox,
+  FaRobot,
+  FaBrain,
+  FaChartLine,
+  FaMicrophone,
+  FaChalkboardTeacher,
 } from 'react-icons/fa';
 import {
   SiFlask,
@@ -49,6 +63,13 @@ import {
   SiRaspberrypi,
   SiSemrush,
   SiGoogleanalytics,
+  SiTensorflow,
+  SiScikitlearn,
+  SiPandas,
+  SiPytorch,
+  SiJupyter,
+  SiGooglecloud,
+  SiPlotly,
 } from 'react-icons/si';
 import { VscVscode } from 'react-icons/vsc';
 import { PiFloppyDiskFill } from 'react-icons/pi';
@@ -61,6 +82,10 @@ import {
   AiFillLinkedin,
 } from "react-icons/ai";
 import { GoLocation } from "react-icons/go";
+import { BiBarChartSquare } from "react-icons/bi";
+import { FiPackage } from "react-icons/fi";
+
+
 
 import Image from 'next/image';
 import type { PortfolioData } from '@/types/portfolio';
@@ -95,6 +120,14 @@ const categoryIconMapping: Record<string, JSX.Element> = {
   "Communication": <FaGlobe />,
   "SEO": <SiGoogleanalytics />,
   "Branding": <FaFileAlt />,
+  "Project & Client Management": <FaWrench />,
+  "Electronics & Tech": <PiFloppyDiskFill />,
+  "Data Science": <FaChartLine />,
+  "Artificial Intelligence": <FaBrain />,
+  "Presentation": <FaChalkboardTeacher />,
+  "Data Visualization": <BiBarChartSquare />,
+  "Frameworks & Libraries": <FiPackage />,
+  "Cloud": <SiGooglecloud />,
 };
 
 
@@ -139,7 +172,6 @@ const skillIconMapping: Record<string, JSX.Element> = {
   "Electronics": <PiFloppyDiskFill />,
   "Arduino": <SiArduino />,
   "Raspberry Pi": <SiRaspberrypi />,
-  "Circuit Design": <FaWrench />,
 
   // 💬 Communication Protocols
   "I2C": <FaGlobe />,
@@ -184,11 +216,56 @@ const skillIconMapping: Record<string, JSX.Element> = {
   "VS Code": <VscVscode />,
   "Git": <FaGitAlt />,
   "Web Development": <FaGlobe />,
+
+  // 🖌️ Design
+  "Inkspace": <FaFileAlt />, // No Inkspace icon, so fallback to FaFileAlt
+
+  // UI/UX Related
+  "Usability Testing": <FaFileAlt />,
+  "Interaction Design": <FaFileAlt />,
+
+  // Tools
+  "Miro": <FaProjectDiagram />, // Closest visual, or <FaFileAlt /> as fallback
+  "ADK Tools": <FaToolbox />,   // Assumed Android Dev Kit tools? Generic toolbox icon
+  "ADK": <FaToolbox />,
+  "Google Cloud": <SiGooglecloud/>,
+
+  // Project & Client Management
+  "Agile Workflow": <FaProjectDiagram />,
+  "Team Leadership": <FaUsers />,
+  "Resource Planning": <FaClipboardList />,
+  "Client Communication": <FaComments />,
+
+  // Electronics & Tech
+  "Circuit Design": <FaSitemap />,
+  "Soldering": <FaWrench />,
+  "Prototyping Boards": <FaThLarge />,
+
+  // 📊 Data Science
+  "Machine Learning": <FaRobot />,
+  "Data Cleaning": <FaWrench />,
+  "Data Analysis": <FaChartLine />,
+  "TensorFlow": <SiTensorflow />,
+  "scikit-learn": <SiScikitlearn />,
+  "pandas": <SiPandas />,
+  "PyTorch": <SiPytorch />,
+  "matplotlib": <SiPlotly />,
+  "seaborn": <SiPlotly />,
+
+  // 🤖 AI
+  "AI Research": <FaBrain />,
+  "ML Research": <FaBrain />,
+  "Algorithm Development": <FaProjectDiagram />,
+
+  // 🎤 Presentation
+  "Public Speaking": <FaMicrophone />,
+  "Presentation Design": <FaChalkboardTeacher />,
+  "Complex Concept Simplification": <FaChalkboardTeacher /> // fallback for explanation-like topics
 };
 
 
 
-const CATEGORIES = ['All', 'Web', 'Desktop'];
+
 
 const container = {
   hidden: {},
@@ -198,6 +275,9 @@ const container = {
     },
   },
 };
+
+const formatLabel = (cat: string) =>
+  cat.replace(/-/g, ' ').replace(/\b\w/g, (l) => l.toUpperCase());
 
 const item = {
   hidden: { opacity: 0, y: 20 },
@@ -216,6 +296,10 @@ export default function PortfolioClient({ data }: Props) {
     { label: 'LinkedIn', href: data.socials.linkedin, icon: <FaLinkedin /> },
     { label: 'Email', href: data.socials.email, icon: <FaEnvelope /> },
   ];
+
+  const allCategories = ['All', ...new Set(data.projects.flatMap(p => p.categories))];
+  const CATEGORIES = allCategories;
+
 
   // 🔑 Global keyboard toggle
   useEffect(() => {
@@ -418,7 +502,7 @@ return (
                 filter === cat ? 'bg-[#3ABEFF] text-black' : 'bg-white/10 text-white'
                 }`}
             >
-                {cat}
+                {formatLabel(cat)}
             </button>
             ))}
         </div>
@@ -472,24 +556,26 @@ return (
                 {/* Links */}
                 <div className="mt-4 flex gap-3">
                     {p.live && (
-                    <a
+                      <a
                         href={p.live}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="px-4 py-2 rounded bg-[#3ABEFF] text-black text-sm hover:brightness-90 transition"
-                    >
-                        Demo
-                    </a>
+                        className="px-4 py-2 flex items-center gap-2 rounded bg-[#3ABEFF] text-black text-sm hover:brightness-90 transition"
+                      >
+                        <FaExternalLinkAlt size={14} /> Demo
+                      </a>
                     )}
-                    <a
-                    href={p.repo}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="px-4 py-2 rounded border border-white/40 text-sm hover:bg-white/10 transition"
-                    >
-                    Code
-                    </a>
-                </div>
+                    {p.repo && (
+                      <a
+                        href={p.repo}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="px-4 py-2 flex items-center gap-2 rounded border border-white/40 text-sm hover:bg-white/10 transition"
+                      >
+                        <FaGithub size={14} /> Code
+                      </a>
+                    )}
+                  </div>
                 </div>
             </motion.div>
             ))}
