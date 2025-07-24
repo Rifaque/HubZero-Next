@@ -20,7 +20,7 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title: `${data.fullname} | Portfolio`,
-    description: `Explore the official portfolio of ${data.fullname}, a ${data.title} skilled in modern web technologies. Browse projects, skills, and contact details.`,
+    description: `Discover the portfolio of ${data.fullname}, a ${data.title} skilled in circuit design, embedded systems, and communication protocols. Explore projects, skills, and more.`,
     url: `https://hubzero.in/${data.username}`,
     // images: [                        // ← Only rifaque has custom OG images
     //   {

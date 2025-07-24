@@ -5,6 +5,7 @@ import { useEffect, useState } from 'react';
 import { Typewriter } from 'react-simple-typewriter';
 
 import {
+  FaCode,
   FaFileAlt,
   FaGithub,
   FaExternalLinkAlt,
@@ -38,6 +39,7 @@ import {
   FaChartLine,
   FaMicrophone,
   FaChalkboardTeacher,
+  FaPaintBrush,
 } from 'react-icons/fa';
 import {
   SiFlask,
@@ -69,10 +71,12 @@ import {
   SiPytorch,
   SiGooglecloud,
   SiPlotly,
+  SiCplusplus,
+  SiCoursera,
+  SiVercel,
 } from 'react-icons/si';
 import { VscVscode } from 'react-icons/vsc';
-import { PiFloppyDiskFill } from 'react-icons/pi';
-import { MdDeveloperMode } from 'react-icons/md';
+import { PiFloppyDiskFill, PiPaintBrushBroadBold } from 'react-icons/pi';
 import { FiGithub } from 'react-icons/fi';
 import {
   AiOutlineMail,
@@ -81,9 +85,17 @@ import {
   AiFillLinkedin,
 } from "react-icons/ai";
 import { GoLocation } from "react-icons/go";
-import { BiBarChartSquare } from "react-icons/bi";
+import { BiBarChartSquare, BiLayer } from "react-icons/bi";
 import { FiPackage } from "react-icons/fi";
-
+import { TbAssemblyFilled } from "react-icons/tb";
+import { GiCircuitry } from "react-icons/gi";
+import { MdOutlineDashboard } from "react-icons/md";
+import { BsBroadcast } from "react-icons/bs";
+import { LuClipboardList } from "react-icons/lu";        // User Research
+import { TbVectorBezier } from "react-icons/tb";         // Prototyping
+import { MdPhoneIphone } from "react-icons/md";          // Responsive Design
+import { MdOutlineTrackChanges } from "react-icons/md";  // Usability Testing
+import { TbClick } from "react-icons/tb";                // Interaction Design
 
 
 import Image from 'next/image';
@@ -103,24 +115,24 @@ type SocialLink = {
 };
 
 const categoryIconMapping: Record<string, JSX.Element> = {
-  "Languages": <MdDeveloperMode />,
+  "Languages": <FaCode />,
   "Web Development": <FaGlobe />,
   "UI/UX & Design": <FaDesktop />,
   "UI/UX": <FaDesktop />,
-  "Design": <FaFileAlt />,
+  "Design": <PiPaintBrushBroadBold />,
   "Interface": <FaReact />,
   "Tools": <FaTools />,
   "Backend": <FaNodeJs />,
   "Dev Tools": <FaWrench />,
   "Databases": <PiFloppyDiskFill />,
   "Environments": <VscVscode />,
-  "Electronics": <PiFloppyDiskFill />,
-  "Communication Protocols": <FaGlobe />,
-  "Communication": <FaGlobe />,
+  "Electronics": <GiCircuitry />,
+  "Communication Protocols": <BsBroadcast />,
+  "Communication": <BsBroadcast />,
   "SEO": <SiGoogleanalytics />,
   "Branding": <FaFileAlt />,
   "Project & Client Management": <FaWrench />,
-  "Electronics & Tech": <PiFloppyDiskFill />,
+  "Electronics & Tech": <GiCircuitry />,
   "Data Science": <FaChartLine />,
   "Artificial Intelligence": <FaBrain />,
   "Presentation": <FaChalkboardTeacher />,
@@ -135,19 +147,23 @@ const skillIconMapping: Record<string, JSX.Element> = {
   "Python": <FaPython />,
   "JavaScript": <FaJsSquare />,
   "Java": <FaJava />,
-  "C": <MdDeveloperMode />,
-  "C++": <MdDeveloperMode />,
-  "Assembly": <MdDeveloperMode />,
+  "C": <SiCoursera />,
+  "C++": <SiCplusplus />,
+  "Assembly": <TbAssemblyFilled />,
+  "Verilog": <SiVercel />,
 
   // 🎨 UI/UX & Design
   "Design": <FaFileAlt />,
   "Figma": <SiFigma />,
   "Adobe XD": <SiAdobexd />,
-  "Wireframing": <FaFileAlt />,
+  "Wireframing": <MdOutlineDashboard />,
   "UI/UX": <FaDesktop />,
-  "User Research": <FaFileAlt />,
-  "Prototyping": <FaFileAlt />,
-  "Responsive Design": <FaGlobe />,
+  "Design Systems": <BiLayer />,
+  "User Research": <LuClipboardList />,
+  "Prototyping": <TbVectorBezier />,
+  "Responsive Design": <MdPhoneIphone />,
+  "Usability Testing": <MdOutlineTrackChanges />,
+  "Interaction Design": <TbClick />,
 
   // 🛠️ Tools
   "Tools": <FaWrench />,
@@ -183,12 +199,6 @@ const skillIconMapping: Record<string, JSX.Element> = {
   "Technical SEO": <FaFileAlt />,
   "Keyword Research": <FaFileAlt />,
 
-  // 🔤 Branding
-  "Branding": <FaFileAlt />,
-  "Logo Strategy": <FaFileAlt />,
-  "Messaging": <FaFileAlt />,
-  "Brand Guidelines": <FaFileAlt />,
-
   // 📊 SEO Tools
   "Ahrefs": <FaLink />,
   "Google Analytics": <SiGoogleanalytics />,
@@ -217,11 +227,8 @@ const skillIconMapping: Record<string, JSX.Element> = {
   "Web Development": <FaGlobe />,
 
   // 🖌️ Design
-  "Inkspace": <FaFileAlt />, // No Inkspace icon, so fallback to FaFileAlt
-
-  // UI/UX Related
-  "Usability Testing": <FaFileAlt />,
-  "Interaction Design": <FaFileAlt />,
+  "Inkspace": <FaFileAlt />, 
+  "Visual Design": <FaPaintBrush />,
 
   // Tools
   "Miro": <FaProjectDiagram />, // Closest visual, or <FaFileAlt /> as fallback
@@ -261,10 +268,6 @@ const skillIconMapping: Record<string, JSX.Element> = {
   "Presentation Design": <FaChalkboardTeacher />,
   "Complex Concept Simplification": <FaChalkboardTeacher /> // fallback for explanation-like topics
 };
-
-
-
-
 
 const container = {
   hidden: {},
@@ -350,7 +353,7 @@ return (
         </button>
       </nav>
       {menuOpen && (
-        <div className="fixed top-[64px] w-full bg-[#0e0e10] border-b border-white/10 z-40 px-6 py-4 flex flex-col gap-4">
+        <div className="fixed top-[44px] w-full bg-[#0e0e10] border-b border-white/10 z-40 px-6 py-4 flex flex-col gap-4">
           {['about', 'skills', 'projects', 'contact'].map((sec) => (
             <button
               key={sec}
@@ -720,7 +723,7 @@ return (
         </button>
       )}
       <footer className="text-center py-10 text-sm text-white/40 border-t border-white/10">
-        <p>© 2025 Rifaque • Designed, developed & deployed in dark mode 💻🚀</p>
+        <p>© 2025 Hub Zero • Designed, developed & deployed in dark mode 💻🚀</p>
         <div className="mt-3 flex justify-center gap-4">
           <FaDiscord className="w-5 h-5 text-white/70" />
           <FaYoutube className="w-5 h-5 text-white/70" />
