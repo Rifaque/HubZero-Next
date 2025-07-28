@@ -89,8 +89,7 @@ import { TbAssemblyFilled, TbClick, TbVectorBezier } from "react-icons/tb";
 import { GiCircuitry } from "react-icons/gi";
 import { MdOutlineDashboard, MdOutlineTrackChanges, MdPhoneIphone } from "react-icons/md";
 import { BsBroadcast } from "react-icons/bs";
-import { LuClipboardList } from "react-icons/lu";        // User Research
-
+import { LuClipboardList } from "react-icons/lu";
 
 import Image from 'next/image';
 import type { PortfolioData } from '@/types/portfolio';
