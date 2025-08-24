@@ -37,7 +37,7 @@
   },
   {
     "category": "Web Development",
-    "items": ["HTML5", "CSS3", "JavaScript", "TypeScript", "React", "Node.js", "Express.js", "JWT", "OAuth2", "bcrypt", "npm", "pnpm", "Webpack", "socket.io", "Vite"]
+    "items": ["HTML", "CSS", "JavaScript", "TypeScript", "React", "Node.js", "Express.js", "JWT", "OAuth2", "bcrypt", "npm", "pnpm", "Webpack", "socket.io", "Vite"]
   },
   {
     "category": "App Development",
@@ -67,7 +67,7 @@
       "categories": ["Software","Database"],
       "start": "jun 2024",
       "end": "jul 2024",
-      "screenshot": "/screenshots/raif-api.png",
+
       "_comment": "Project screenshot is optional and can be omitted if not available. Size should be 1280px x 450px."
     },
     {
@@ -79,7 +79,7 @@
       "categories": ["Website","Machine Learing"],
       "start": "oct 2024",
       "end": "oct 2024",
-      "screenshot": "/screenshots/raif-api.png",
+
       "_comment": "Project screenshot is optional and can be omitted if not available. Size should be 1280px x 450px."
     },
     {
@@ -91,7 +91,7 @@
       "categories": ["Website","Database"],
       "start": "jul 2025",
       "end": "aug 2025",
-      "screenshot": "/screenshots/raif-api.png",
+      
       "_comment": "Project screenshot is optional and can be omitted if not available. Size should be 1280px x 450px."
     }
   ]

@@ -21,7 +21,7 @@
   "skills": [
     {
       "category": "Languages",
-      "items": ["Python", "JavaScript", "Java"]
+      "items": ["Python", "JavaScript", "Java", "C"]
     },
     {
       "category": "Interface",
@@ -29,15 +29,19 @@
     },
     {
       "category": "Databases",
-      "items": ["MongoDB", "SQL", "SQLite"]
+      "items": ["MongoDB", "SQL", "SQLite", "Firestore"]
     },
     {
       "category": "Tools",
-      "items": ["Cloudflare", "NGINX", "Postman", "Figma", "Git", "VS Code"]
+      "items": ["Cloudflare", "NGINX", "Postman", "Figma", "Git", "VS Code", "Firebase", "Linux", "Imgix"]
     },
     {
       "category": "Web Development",
-      "items": ["React", "Next.js", "HTML", "CSS", "JavaScript", "Express.js", "Node.js"]
+      "items": ["React", "Next.js", "HTML", "CSS", "JavaScript", "TypeScript", "Express.js", "Node.js", "REST APIs", "Socket.io", "Firebase Auth"]
+    },
+    {
+      "category": "App Development",
+      "items": ["Android (Java)", "Android Studio", "Gradle"]
     }
   ],
   "projects": [

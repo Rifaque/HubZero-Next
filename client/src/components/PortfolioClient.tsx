@@ -189,7 +189,7 @@ const skillIconMapping: Record<string, JSX.Element> = {
   // 🌐 Web Dev
   "React": <FaReact />,
   "Next.js": <SiNextdotjs />,
-  "Tailwind CSS": <SiStreamlit />, // Placeholder icon
+  "Tailwind CSS": <SiStreamlit />, 
   "CSS": <FaCss3Alt />,
   "HTML": <FaHtml5 />,
   "Tkinter": <FaDesktop />,
@@ -213,8 +213,8 @@ const skillIconMapping: Record<string, JSX.Element> = {
   "Visual Design": <FaPaintBrush />,
 
   // Tools
-  "Miro": <FaProjectDiagram />, // Closest visual, or <FaFileAlt /> as fallback
-  "ADK Tools": <FaToolbox />,   // Assumed Android Dev Kit tools? Generic toolbox icon
+  "Miro": <FaProjectDiagram />, 
+  "ADK Tools": <FaToolbox />,  
   "Google Cloud": <SiGooglecloud/>,
 
   // Project & Client Management
@@ -247,7 +247,7 @@ const skillIconMapping: Record<string, JSX.Element> = {
   // 🎤 Presentation
   "Public Speaking": <FaMicrophone />,
   "Presentation Design": <FaChalkboardTeacher />,
-  "Complex Concept Simplification": <FaChalkboardTeacher /> // fallback for explanation-like topics
+  "Complex Concept Simplification": <FaChalkboardTeacher />
 };
 
 const container = {
