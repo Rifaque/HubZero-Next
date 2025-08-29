@@ -72,6 +72,19 @@
       "_comment": "Project screenshot is optional and can be omitted if not available. Size should be 1280px x 450px."
     },
     {
+      "name": "ZeroLink",
+      "desc": "A modern full-stack real-time chat app with secure authentication, WebSocket messaging, and a sleek Next.js frontend.",
+      "longDesc": "ZeroLink is a modern, full-stack real-time chat application built with the MERN stack (MongoDB, Express.js, Next.js, Node.js), TypeScript, and Firebase. It provides a secure, seamless, and highly responsive communication platform featuring instant messaging, typing indicators via WebSockets, JWT + Firebase authentication, and a sleek Next.js 14 UI styled with Tailwind CSS and animated using Framer Motion. The frontend is deployed on Vercel, while the backend is self-hosted on Ubuntu with NGINX and secured by a Cloudflare Tunnel. The project follows a scalable monorepo architecture separating client, server, and shared logic.",
+      "repo": "https://github.com/Rifaque/ZeroLink",
+      "live": "https://zerolink.hubzero.in",
+      "tech": ["MongoDB", "Express.js", "Next.js", "Node.js", "TypeScript", "Firebase", "Tailwind CSS", "Framer Motion", "NGINX", "Ubuntu", "Cloudflare"],
+      "categories": ["Web"],
+      "start": "Jul 2025",
+      "end": "Jul 2025",
+      "screenshot": "/projectscreenshots/zerolink-thumbnail.png",
+      "_comment": "Project screenshot is optional and can be omitted if not available. Size should be 1280px x 450px."
+    },
+    {
       "name": "Hospital Management System",
       "desc": "Patient and staff record management system with login authentication and full CRUD capabilities.",
       "longDesc": "A desktop application for hospitals to manage patient records, appointments, and staff information. Built with Python and Tkinter, backed by a SQLite database.",
@@ -105,19 +118,6 @@
       "start": "May 2023",
       "end": "Jun 2023",
       "screenshot": "/projectscreenshots/college-thumbnail.png",
-      "_comment": "Project screenshot is optional and can be omitted if not available. Size should be 1280px x 450px."
-    },
-    {
-      "name": "ZeroLink",
-      "desc": "A modern full-stack real-time chat app with secure authentication, WebSocket messaging, and a sleek Next.js frontend.",
-      "longDesc": "ZeroLink is a modern, full-stack real-time chat application built with the MERN stack (MongoDB, Express.js, Next.js, Node.js), TypeScript, and Firebase. It provides a secure, seamless, and highly responsive communication platform featuring instant messaging, typing indicators via WebSockets, JWT + Firebase authentication, and a sleek Next.js 14 UI styled with Tailwind CSS and animated using Framer Motion. The frontend is deployed on Vercel, while the backend is self-hosted on Ubuntu with NGINX and secured by a Cloudflare Tunnel. The project follows a scalable monorepo architecture separating client, server, and shared logic.",
-      "repo": "https://github.com/Rifaque/ZeroLink",
-      "live": "https://zerolink.hubzero.in",
-      "tech": ["MongoDB", "Express.js", "Next.js", "Node.js", "TypeScript", "Firebase", "Tailwind CSS", "Framer Motion", "NGINX", "Ubuntu", "Cloudflare"],
-      "categories": ["Web"],
-      "start": "Jul 2025",
-      "end": "Jul 2025",
-      "screenshot": "/projectscreenshots/zerolink-thumbnail.png",
       "_comment": "Project screenshot is optional and can be omitted if not available. Size should be 1280px x 450px."
     }
   ]
