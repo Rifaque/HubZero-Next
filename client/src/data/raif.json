@@ -67,7 +67,7 @@
       "categories": ["Software","Database"],
       "start": "jun 2024",
       "end": "jul 2024",
-
+      "screenshot": "/projectscreenshots/hospital-thumbnail.png",
       "_comment": "Project screenshot is optional and can be omitted if not available. Size should be 1280px x 450px."
     },
     {
@@ -79,7 +79,7 @@
       "categories": ["Website","Machine Learing"],
       "start": "oct 2024",
       "end": "oct 2024",
-
+      "screenshot": "/projectscreenshots/blood-app-thumbnail.png",
       "_comment": "Project screenshot is optional and can be omitted if not available. Size should be 1280px x 450px."
     },
     {
