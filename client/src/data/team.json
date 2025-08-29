@@ -4,7 +4,7 @@
     "username": "rifaque",
     "role": "Full Stack Developer",
     "image": "/images/team/Rifaque.jpg",
-    "about": "Founder, Developer & Strategist at HubZero. Focused on innovation, reliability, and UI polish."
+    "about": "Co-Founder, Developer & Strategist at HubZero. Focused on innovation, reliability, and UI polish."
   },
   {
     "name": "Mohammed Iyad",
@@ -16,21 +16,21 @@
   {
     "name": "Raif Karani",
     "username": "raif",
-    "role": "Software Engineer",
+    "role": "Full Stack Developer",
     "image": "/images/team/Raif.jpg",
-    "about": "Backend specialist ensuring performance and security in all software systems."
+    "about": "Full Stack Developer with expertise in web and mobile development and data science"
   },
   {
     "name": "Syed Mohammad Sultan",
     "username": "sultan",
-    "role": "Branding & SEO",
+    "role": "Data Scientist & AI/ML Researcher",
     "image": "/images/team/Sultan.jpg",
-    "about": "Leads branding and SEO strategies to maximize client visibility and impact."
+    "about": "Data Scientist and AI/ML Researcher with a knack for SEO and digital marketing."
   },
   {
     "name": "Salsabeel Kobattey",
     "username": "salsabeel",
-    "role": "Electronics & Integration",
+    "role": "Electronics & Integration Engineer",
     "image": "/images/team/Salsabeel.jpg",
     "about": "Bridges software with hardware — expert in embedded systems and integrations."
   }
