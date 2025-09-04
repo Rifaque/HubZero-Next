@@ -46,19 +46,6 @@
   ],
   "projects": [
     {
-      "name": "eCommerce Store",
-      "desc": "Luxury eCommerce platform featuring advanced product filtering, optimized image delivery, and a seamless shopping experience.",
-      "longDesc": "A luxury eCommerce platform with advanced product filtering, user authentication, shopping carts, and optimized image delivery via Imgix for lightning‑fast load times.",
-      "repo": "https://github.com/Rifaque/Bhatkal-Time-Luxe",
-      "live": "https://bhatkaltimeluxe.in",
-      "tech": ["MongoDB", "Express.js", "React.js", "Node.js", "Imgix"],
-      "categories": ["Web"],
-      "start": "Apr 2025",
-      "end": "May 2025",
-      "screenshot": "/projectscreenshots/ecommerce-thumbnail.png",
-      "_comment": "Project screenshot is optional and can be omitted if not available. Size should be 1280px x 450px."
-    },
-    {
       "name": "Hub Zero Website",
       "desc": "Official website of Hub Zero, built with Next.js and Tailwind CSS, deployed using NGINX on Ubuntu and accelerated with Cloudflare.",
       "longDesc": "Official Hub Zero site built with Next.js & Tailwind, featuring scroll‑snap sections, GSAP animations, and dynamic content, deployed on Ubuntu via NGINX and accelerated with Cloudflare CDN.",
@@ -82,6 +69,18 @@
       "start": "Jul 2025",
       "end": "Jul 2025",
       "screenshot": "/projectscreenshots/zerolink-thumbnail.png",
+      "_comment": "Project screenshot is optional and can be omitted if not available. Size should be 1280px x 450px."
+    },
+        {
+      "name": "eCommerce Store",
+      "desc": "Luxury eCommerce platform featuring advanced product filtering, optimized image delivery, and a seamless shopping experience.",
+      "longDesc": "A luxury eCommerce platform with advanced product filtering, user authentication, shopping carts, and optimized image delivery via Imgix for lightning‑fast load times.",
+      "repo": "https://github.com/Rifaque/Bhatkal-Time-Luxe",
+      "tech": ["MongoDB", "Express.js", "React.js", "Node.js", "Imgix"],
+      "categories": ["Web"],
+      "start": "Apr 2025",
+      "end": "May 2025",
+      "screenshot": "/projectscreenshots/ecommerce-thumbnail.png",
       "_comment": "Project screenshot is optional and can be omitted if not available. Size should be 1280px x 450px."
     },
     {
